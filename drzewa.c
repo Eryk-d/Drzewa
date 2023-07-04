@@ -17,7 +17,7 @@ void drzb_postorder(struct element* x);
 struct element* BST_SZUKAJ(struct element* x, int k);
 struct element* BST_MIN(struct element* x);
 struct element* BST_MAX(struct element* x);
-struct element* BST_NASTÊPNIK(struct element* x);
+struct element* BST_NASTÃŠPNIK(struct element* x);
 struct element* BST_POPRZEDNIK(struct element* x);
 struct element* BST_USUN(struct element* root, struct element* usuwany);
 struct element* BST_ZWOLNIJ(struct element* root);
@@ -97,7 +97,7 @@ int main()
                 system("pause");
                 break;
             }
-            wynik2 = BST_NASTÊPNIK(wynik);
+            wynik2 = BST_NASTÃŠPNIK(wynik);
             if (wynik2 != NULL) printf("nastepnik to: %d\n", *wynik2);
             else printf("nastepnik tej wartosci nie istnieje\n");
             system("pause");
@@ -207,7 +207,7 @@ struct element* BST_MAX(struct element* x)
     return x;
 }
 
-struct element* BST_NASTÊPNIK(struct element* x)
+struct element* BST_NASTÃŠPNIK(struct element* x)
 {
     struct element* y = x;
 
@@ -241,7 +241,7 @@ struct element* BST_USUN(struct element* root, struct element* z)
     int w;
 
     if (z->left == NULL || z->right == NULL) y = z;
-    else y = BST_NASTÊPNIK(z);
+    else y = BST_NASTÃŠPNIK(z);
     if (y->left != NULL) x = y->left;
     else x = y->right;
     if (x != NULL) x->parent = y->parent; 
